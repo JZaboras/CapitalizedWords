@@ -6,10 +6,16 @@ namespace CapitalizedWords
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!".BeginsCapitalized());
-            Console.WriteLine("noncapitalized".BeginsCapitalized());
-            Console.WriteLine("Hello World!".IsCapitalizedSentence());
-            Console.WriteLine("My name is Frank".IsCapitalizedSentence());
+            if(args.Length > 0)
+            {
+                var stringCheker = new StringCheker();
+                stringCheker.InputString = args[0];
+                stringCheker.Check();
+            }
+            else
+            {
+                Console.WriteLine("No arguments was provided!! Usage>:CapitalizedWords.exe <input string>");
+            }
             Console.ReadKey();
         }
     }

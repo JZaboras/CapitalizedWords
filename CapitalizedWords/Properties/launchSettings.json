@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CapitalizedWords": {
+      "commandName": "Project",
+      "commandLineArgs": "Keep It Simple Stupid (KISS)"
+    }
+  }
+}
