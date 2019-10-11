@@ -8,14 +8,14 @@ namespace CapitalizedWords
     {
         public static bool BeginsCapitalized(this string str)
         {
-            string firstLetter = str.Substring(0, 1);
+            string firstLetter = str.Trim().Substring(0, 1);
             if (firstLetter == firstLetter.ToUpper()) return true;
             return false;
         }
 
         public static bool IsCapitalizedSentence(this string str)
         {
-            string[] words = str.Split(" ");
+            string[] words = str.Trim().Split(" ");
             int wordsCount = words.Length;
             foreach (string word in words)
             {
