@@ -9,27 +9,19 @@ namespace CapitalizedWords.Tests
         {
         }
 
-        [TestCase("name")]
-        [TestCase("word")]
-        [TestCase("wORD")]
-        [TestCase("functioN")]
-        [TestCase(" meTHOD")]
-        [TestCase("sentencE ")]
-        public void NonCapitalizedWords(string testString)
+        [TestCase("name", ExpectedResult = false)]
+        [TestCase("    ", ExpectedResult = false)]
+        [TestCase("wORD", ExpectedResult = false)]
+        [TestCase("functioN", ExpectedResult = false)]
+        [TestCase(" meTHOD", ExpectedResult = false)]
+        [TestCase("sentencE ", ExpectedResult = false)]
+        [TestCase("Name ", ExpectedResult = true)]
+        [TestCase("WORD ", ExpectedResult = true)]
+        [TestCase("MeTHOD ", ExpectedResult = true)]
+        [TestCase("SentencE  ", ExpectedResult = true)]
+        public bool CapitalizedWords(string testString)
         {
-            Assert.IsFalse(testString.BeginsCapitalized());
-        }
-
-
-        [TestCase("Name")]
-        [TestCase("Word")]
-        [TestCase("WORD")]
-        [TestCase("FunctioN")]
-        [TestCase(" MeTHOD")]
-        [TestCase("SentencE ")]
-        public void CapitalizedWords(string testString)
-        {
-            Assert.IsTrue(testString.BeginsCapitalized());
+            return testString.BeginsCapitalized();
         }
     }
 }
