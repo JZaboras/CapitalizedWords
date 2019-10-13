@@ -4,11 +4,6 @@ namespace CapitalizedWords.Tests
 {
     public class BeginsCapitalizedTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [TestCase("name", ExpectedResult = false)]
         [TestCase("    ", ExpectedResult = false)]
         [TestCase("wORD", ExpectedResult = false)]
@@ -19,6 +14,11 @@ namespace CapitalizedWords.Tests
         [TestCase("WORD ", ExpectedResult = true)]
         [TestCase("MeTHOD ", ExpectedResult = true)]
         [TestCase("SentencE  ", ExpectedResult = true)]
+        [TestCase("/SentencE  ", ExpectedResult = true)]
+        [TestCase("  [SentencE  ", ExpectedResult = true)]
+        [TestCase("(SentencE???)  ", ExpectedResult = true)]
+        [TestCase("<SentencE>  ", ExpectedResult = true)]
+        [TestCase("<SentencE>  MeTHOD srs 15", ExpectedResult = true)]
         public bool CapitalizedWords(string testString)
         {
             return testString.BeginsCapitalized();

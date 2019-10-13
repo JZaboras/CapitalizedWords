@@ -2,7 +2,7 @@
   "profiles": {
     "CapitalizedWords": {
       "commandName": "Project",
-      "commandLineArgs": "\"Keep It Simple Stupid (KISS)\""
+      "commandLineArgs": "\"Test suites written with chosen xUnit framework for .NET [...]\""
     }
   }
 }
